@@ -1,0 +1,14 @@
+{
+  "name": "coffeescript-sample",
+  "version": "1.0.0",
+  "description": "我的coffeescript例子",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "coffee-script": "^1.12.5"
+  }
+}
