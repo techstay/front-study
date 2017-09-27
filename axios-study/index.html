@@ -10,6 +10,17 @@
 <button onclick="onClick()">点击查询IP地址</button>
 <h2 id="ip"></h2>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script src="check_ip.js"></script>
+<script>
+    function onClick() {
+        axios.get('https://httpbin.org/ip')
+            .then(function (response) {
+                let ip = document.getElementById('ip')
+                ip.textContent = response.data.origin
+            })
+            .catch(function (error) {
+                alert(error)
+            })
+    }
+</script>
 </body>
 </html>
