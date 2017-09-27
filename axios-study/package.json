@@ -1,0 +1,17 @@
+{
+  "name": "axios-study",
+  "version": "1.0.0",
+  "description": "axios例子",
+  "main": "index.js",
+  "scripts": {
+    "test": "exit 0"
+  },
+  "keywords": [
+    "axios"
+  ],
+  "author": "yitian",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.16.2"
+  }
+}
