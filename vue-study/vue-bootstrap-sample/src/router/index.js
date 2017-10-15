@@ -22,5 +22,7 @@ export default new Router({
       component: About
     }
 
-  ]
+  ],
+  linkExactActiveClass: 'active',
+  mode: 'hash'
 })
