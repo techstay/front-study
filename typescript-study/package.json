@@ -1,0 +1,14 @@
+{
+  "name": "typescript-study",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "exit 0"
+  },
+  "author": "yitian",
+  "license": "MIT",
+  "dependencies": {
+    "typescript": "^2.5.3"
+  }
+}
