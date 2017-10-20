@@ -1,39 +1,30 @@
 <template>
   <div id="app">
-    <div class="container">
-      <nav class="navbar navbar-expand navbar-dark bg-dark">
-        <a class="navbar-brand" href="/">Vue-Bootstrap例子</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
-                aria-controls="#navbar"
-                aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+    <b-container>
+      <b-navbar toggleable="md" type="dark" variant="dark">
 
-        <div class="collapse navbar-collapse" id="navbar">
-          <ul class="navbar-nav mr-auto">
-            <router-link to="/" class="nav-item" tag="li">
-              <a class="nav-link">主页<span class="sr-only">(current)</span></a>
-            </router-link>
-            <router-link to="/ClientInfo" class="nav-item" tag="li">
-              <a class="nav-link">客户端信息</a>
-            </router-link>
-            <router-link to="/About" class="nav-item" tag="li">
-              <a class="nav-link">关于</a>
-            </router-link>
-          </ul>
-        </div>
-      </nav>
-    </div>
+        <b-nav-toggle target="nav_collapse"></b-nav-toggle>
+
+        <b-navbar-brand href="/">Vue-Bootstrap例子</b-navbar-brand>
+
+        <b-collapse is-nav id="nav_collapse">
+
+          <b-nav is-nav-bar>
+            <b-nav-item to="/ClientInfo">客户端信息</b-nav-item>
+            <b-nav-item to="/About">关于</b-nav-item>
+          </b-nav>
+        </b-collapse>
+      </b-navbar>
+    </b-container>
     <br>
-    <div class="container">
+    <b-container>
       <router-view/>
 
       <hr>
       <footer>
         <p>&copy;2017 这是页脚</p>
       </footer>
-
-    </div>
+    </b-container>
   </div>
 </template>
 

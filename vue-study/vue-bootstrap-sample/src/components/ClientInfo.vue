@@ -1,62 +1,47 @@
 <template>
-  <div class="row justify-content-center">
-    <div class="col-md-6">
+  <b-row align-h="center">
+    <b-col cols="6" md="6">
       <h2>客户端信息</h2>
-      <div class="alert alert-success alert-dismissible fade show" role="alert" hidden>
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        获取IP地址成功
-      </div>
-      <table class="table table-striped table-bordered table-hover table-responsive">
-        <thead class="thead-default">
-        <th>项目</th>
-        <th>值</th>
-        </thead>
-        <tbody>
-        <tr>
-          <td>操作系统</td>
-          <td>{{clientInfo.os}}</td>
-        </tr>
-        <tr>
-          <td>浏览器</td>
-          <td>{{clientInfo.browser}}</td>
-        </tr>
-        <tr>
-          <td>IP地址</td>
-          <td>{{clientInfo.ip}}</td>
-        </tr>
-        </tbody>
-      </table>
-    </div>
+      <b-button @click="onClick" variant="primary">添加项目</b-button>
+      <b-button @click="seen = !seen" variant="primary">是否显示项目</b-button>
+      <b-table striped bordered hover responsive :fields="fields" :items="items"></b-table>
+    </b-col>
+  </b-row>
 
-
-  </div>
 </template>
 <script>
   import platform from 'platform'
   import axios from 'axios'
 
+  let tableItems = []
+
+  function initTableItems() {
+    tableItems.push({key: '操作系统', value: `${platform.os}`})
+    tableItems.push({key: '浏览器', value: `${platform.name} ${platform.version}`})
+    axios.get('http://httpbin.org/ip')
+      .then(function (response) {
+        let ip = response.data.origin
+        tableItems.push({key: 'IP地址', value: ip})
+      })
+      .catch(function (error) {
+        alert(error)
+      })
+    return tableItems
+  }
+
   export default {
     data() {
-      return {}
-    },
-    computed: {
-      clientInfo: function () {
-        let info = {
-          ip: '正在检测',
-          os: `${platform.os}`,
-          browser: `${platform.name} ${platform.version}`
-        }
-        axios.get('http://httpbin.org/ip')
-          .then(function (response) {
-            info.ip = response.data.origin
-          })
-          .catch(function (error) {
-            alert(error)
-          })
-        return info
+      return {
+        fields: [
+          {
+            key: 'key', label: '属性'
+          }, {
+            key: 'value', label: '值'
+          }],
+        items: initTableItems()
       }
-    }
+    },
+    computed: {},
+    methods: {}
   }
 </script>
