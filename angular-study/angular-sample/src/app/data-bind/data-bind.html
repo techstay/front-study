@@ -1,0 +1,27 @@
+<mat-tab-group>
+  <mat-tab label="显示数据">
+    <p>显示单个数据:{{count}}</p>
+    <p>选择显示数据:
+      <button (click)="seen=!seen">切换显示</button>
+      <span *ngIf="seen">能不能看见我</span>
+    </p>
+    列表显示数据:
+    <ul>
+      <li *ngFor="let name of names">
+        {{name}}
+      </li>
+    </ul>
+  </mat-tab>
+  <mat-tab label="单向绑定">
+    <p>
+      <button (click)="addCount()">更新计数</button>
+      {{count}}
+    </p>
+  </mat-tab>
+  <mat-tab label="双向绑定(ngModel)">
+
+    <h2>双向绑定</h2>
+    <input type="text" [(ngModel)]="username"/>
+    <p>{{username}}</p>
+  </mat-tab>
+</mat-tab-group>

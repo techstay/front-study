@@ -32,7 +32,7 @@ export class ClientInfoComponent implements OnInit {
   }
 }
 
-export class ClientInfoDataSource implements DataSource<any> {
+class ClientInfoDataSource implements DataSource<any> {
   constructor(private clientInfoService: ClientInfoService) {
   }
 

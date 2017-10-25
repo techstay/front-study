@@ -1,0 +1,12 @@
+<mat-toolbar role="header" color="primary">
+  <a mat-button
+     routerLink="/">
+    <mat-icon svgIcon="angular"></mat-icon>
+    <span>主页</span>
+  </a>
+  <a mat-button
+     *ngFor="let link of navLinks"
+     [routerLink]="link.path">
+    {{link.label}}
+  </a>
+</mat-toolbar>

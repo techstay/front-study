@@ -3,6 +3,7 @@ import {NgModule} from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
+import {HttpModule} from '@angular/http';
 
 import {AppComponent} from './app.component';
 import {AppMaterialModule} from './app-material.module';
@@ -11,7 +12,9 @@ import {IndexComponent} from './index.component';
 import {AppRoutingModule} from './app-routing.module';
 import {ClientInfoService} from './client-info.service';
 import {ClientInfoComponent} from './client-info.component';
-import {DataBindComponent} from './data-bind.component';
+import {DataBindComponent} from './data-bind/data-bind.component';
+import {AppNavComponent} from './app-navbar/app-nav.component';
+
 
 @NgModule({
   declarations: [
@@ -20,6 +23,7 @@ import {DataBindComponent} from './data-bind.component';
     IndexComponent,
     ClientInfoComponent,
     DataBindComponent,
+    AppNavComponent
   ],
   imports: [
     BrowserModule,
@@ -28,6 +32,7 @@ import {DataBindComponent} from './data-bind.component';
     AppMaterialModule,
     AppRoutingModule,
     FormsModule,
+    HttpModule,
   ],
   providers: [
     ClientInfoService

@@ -2,10 +2,7 @@ import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-index',
-  template: `<mat-card>
-  <mat-card-title>主页</mat-card-title>
-  <mat-card-content></mat-card-content>
-</mat-card>
+  template: `<h1>主页</h1>
   `,
 })
 export class IndexComponent implements OnInit {
