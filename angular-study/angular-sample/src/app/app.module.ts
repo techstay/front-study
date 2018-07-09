@@ -3,7 +3,6 @@ import {NgModule} from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
-import {HttpModule} from '@angular/http';
 
 import {AppComponent} from './app.component';
 import {AppMaterialModule} from './app-material.module';
@@ -32,7 +31,6 @@ import {AppNavComponent} from './app-navbar/app-nav.component';
     AppMaterialModule,
     AppRoutingModule,
     FormsModule,
-    HttpModule,
   ],
   providers: [
     ClientInfoService
