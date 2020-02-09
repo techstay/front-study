@@ -1,28 +1,32 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {HttpClientModule} from '@angular/common/http';
-import {FormsModule} from '@angular/forms';
 
 import {AppComponent} from './app.component';
-import {AppMaterialModule} from './app-material.module';
-import {AboutComponent} from './about.component';
-import {IndexComponent} from './index.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {AboutComponent} from './about/about.component';
+import {ClientInfoComponent} from './client-info/client-info.component';
+import {IndexComponent} from './index/index.component';
 import {AppRoutingModule} from './app-routing.module';
 import {ClientInfoService} from './client-info.service';
-import {ClientInfoComponent} from './client-info.component';
+import {MatTableModule} from '@angular/material/table';
+import {AppNavComponent} from './app-nav/app-nav.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {RouterModule} from '@angular/router';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
 import {DataBindComponent} from './data-bind/data-bind.component';
-import {AppNavComponent} from './app-navbar/app-nav.component';
-
+import {FormsModule} from '@angular/forms';
+import {AppMaterialModule} from './app-material.module';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutComponent,
-    IndexComponent,
     ClientInfoComponent,
-    DataBindComponent,
-    AppNavComponent
+    IndexComponent,
+    AppNavComponent,
+    DataBindComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +37,7 @@ import {AppNavComponent} from './app-navbar/app-nav.component';
     FormsModule,
   ],
   providers: [
-    ClientInfoService
+    ClientInfoService,
   ],
   bootstrap: [AppComponent]
 })

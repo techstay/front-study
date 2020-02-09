@@ -2,8 +2,8 @@ import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-index',
-  template: `<h1>主页</h1>
-  `,
+  templateUrl: './index.component.html',
+  styleUrls: ['./index.component.css']
 })
 export class IndexComponent implements OnInit {
   title = '主页';

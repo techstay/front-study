@@ -1,12 +1,10 @@
-import {
-  Component,
-} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-data-bind',
-  templateUrl: './data-bind.html'
+  templateUrl: './data-bind.component.html',
+  styleUrls: ['./data-bind.component.css']
 })
-
 export class DataBindComponent {
   count = 0;
   seen = true;

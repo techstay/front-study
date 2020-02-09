@@ -1,10 +1,11 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MatIconRegistry} from '@angular/material/icon';
 import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-nav',
-  templateUrl: './app-nav.html'
+  templateUrl: './app-nav.component.html',
+  styleUrls: ['./app-nav.component.css']
 })
 export class AppNavComponent {
   navLinks = [
